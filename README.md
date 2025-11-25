@@ -1,69 +1,92 @@
-# Welcome to your Lovable project
+🪙 Crypto Trading Bot
 
-## Project info
+An automated cryptocurrency trading bot built using Python that integrates market data, trading strategies, and exchange APIs to execute trades with speed and precision.
 
-**URL**: https://lovable.dev/projects/b6d4b806-426c-4352-99be-4260fe942c3e
+🚀 Features
 
-## How can I edit this code?
+📊 Live Market Data (from Binance / Coinbase / Any API you configure)
 
-There are several ways of editing your application.
+🤖 Automated Buy/Sell Execution
 
-**Use Lovable**
+🧠 Customizable Trading Strategies
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b6d4b806-426c-4352-99be-4260fe942c3e) and start prompting.
+📈 Technical Indicators Support (EMA, RSI, MACD, etc.)
 
-Changes made via Lovable will be committed automatically to this repo.
+🧪 Backtesting Support
 
-**Use your preferred IDE**
+🔔 Logging & Alerts through console or Telegram
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🛡 Risk Management – stop loss, take profit, position sizing
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🏗 Project Structure
+crypto-trading-bot/
+│── config/               # API keys, credentials (DO NOT COMMIT KEYS)
+│── data/                 # Market data, historical candles
+│── strategies/           # Your trading strategies
+│── bot/                  # Trading engine core files
+│── utils/                # Helper functions
+│── requirements.txt      # Dependencies
+│── main.py               # Entry point
+│── README.md             # Project documentation
 
-Follow these steps:
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/urvashivankar/Crypto-trading-bot.git
+cd Crypto-trading-bot
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2️⃣ Install Dependencies
+pip install -r requirements.txt
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3️⃣ Add Your API Keys
 
-# Step 3: Install the necessary dependencies.
-npm i
+Create a file:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+config/keys.py
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Add:
 
-**Use GitHub Codespaces**
+API_KEY = "your_api_key"
+API_SECRET = "your_secret_key"
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+▶️ Running the Bot
+python main.py
 
-## What technologies are used for this project?
 
-This project is built with .
+For backtesting:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+python backtest.py
 
-## How can I deploy this project?
+📚 Strategy Customization
 
-Simply open [Lovable](https://lovable.dev/projects/b6d4b806-426c-4352-99be-4260fe942c3e) and click on Share -> Publish.
+Add your strategies inside:
 
-## I want to use a custom domain - is that possible?
+strategies/
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+Example:
+
+def my_strategy(df):
+    if df["EMA_20"] > df["EMA_50"]:
+        return "BUY"
+    else:
+        return "SELL"
+
+🖥 Requirements
+
+Python 3.8+
+
+Pip
+
+Exchange API (Binance recommended)
+
+⚠️ Disclaimer
+
+This project is for educational purposes only.
+Crypto trading involves major financial risk.
+Use the bot at your own risk.
+
+⭐ Contribute
+
+Pull requests are welcome!
+If you’d like to improve a feature or report a bug, create an Issue on GitHub.
